@@ -32,7 +32,7 @@ export default function Home() {
       <div className="py-5">
         <div className="container my-5 ">
           <div className="row flex-lg-row-reverse align-items-center g-5 ">
-            <div className="col-10 col-sm-8 col-lg-6 m-0 p-0 ">
+            <div className="col-12 col-sm-12 col-lg-6 text-center m-0 p-0 ">
               <Image
                 src={BannerOracion}
                 className="mx-lg-auto img-fluid rounded-end"
@@ -54,14 +54,14 @@ export default function Home() {
       {/*Mision y visión*/}
       <div className="py-5">
         <div className="container my-5">
-          <div class="row flex-lg-row align-items-center">
-            <div className="col-6 ">
+          <div className="row flex-lg-row align-items-center">
+            <div className="col-12 col-sm-12 col-lg-6 ">
               <div className="card-body ">
                 <h3 className="display-7 fw-bold lh-1 mb-3">MISIÓN</h3>
                 <p>{info.mision}</p>
               </div>
             </div>
-            <div className="col-6 ">
+            <div className="col-12 col-sm-12 col-lg-6 ">
               <div className="card-body">
                 <h3 className="display-7 fw-bold lh-1 mb-3">VISIÓN</h3>
                 <p>{info.vision}</p>
