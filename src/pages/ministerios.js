@@ -18,7 +18,7 @@ export default function Ministeries() {
   return (
     <div className={inter.className + " pt-5"}>
       <div className="text-center">
-        <h2> Ministerios</h2>
+        <h2 className="display-4 fw-bold lh-1 mb-3"> Ministerios</h2>
       </div>
       <div className="container">
         {ministerios.ministres?.map((min) => {
@@ -40,7 +40,7 @@ export default function Ministeries() {
                 />
               </div>
               <div className="col-lg-6">
-                <h2 className="display-4 fw-bold lh-1 mb-3">{min.title}</h2>
+                <h2 className="display-6 fw-bold lh-1 mb-3">{min.title}</h2>
                 <p className="lead">{min.content}</p>
                 <Link
                   href={`/ministerios/${min.id}`}

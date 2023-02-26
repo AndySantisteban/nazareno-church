@@ -7,7 +7,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/* <link rel="shortcut icon" href={FavIcon} /> */}
         <title>Iglesia del Nazareno - Ferreñafe</title>
       </Head>
       <Layout>
