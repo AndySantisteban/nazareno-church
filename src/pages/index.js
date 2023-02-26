@@ -32,21 +32,21 @@ export default function Home() {
       <div className="py-5">
         <div className="container my-5 ">
           <div className="row flex-lg-row-reverse align-items-center g-5 ">
-            <div className="col-12 col-sm-12 col-lg-6 text-center m-0 p-0 ">
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <h2 className="display-2 fw-bold lh-1 mb-3">
+                Bienvenidos a la Iglesia del NAZARENO
+              </h2>
+              <p className="lead">{info.motto}</p>
+            </div>
+            <div className="col col-lg-6 col-md-6 col-sm-12 text-center ">
               <Image
                 src={BannerOracion}
-                className="mx-lg-auto img-fluid rounded-end"
+                className="mx-lg-auto img-fluid rounded-start"
                 alt="Bootstrap Themes"
                 width="700"
                 height="500"
                 loading="lazy"
               />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="display-2 fw-bold lh-1 mb-3">
-                Bienvenidos a la Iglesia del NAZARENO
-              </h2>
-              <p className="lead">{info.motto}</p>
             </div>
           </div>
         </div>
