@@ -14,7 +14,8 @@ export default function Ministerios(req, res) {
     {
       id: 2,
       img: "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/332071752_935157594326698_8335509709515116299_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFMPknota72Zjor5qGWoBuRKtrbmaImrg4q2tuZoiauDjwee0bcBYeCeObW1EGzbSdCYGYnjjTtiUZGfzTVS0Q6&_nc_ohc=W1EibJVj-qMAX-dD3Sz&tn=WXA5-0qmUL9SdBJP&_nc_ht=scontent-lim1-1.xx&oh=00_AfAIACkGg3LFqYYdFNM_JlQdZA5t3dpDPhCGb6kvplgueQ&oe=63FF146B",
-      content: "",
+      content:
+        "Torre fuerte es el nombre de Jehová; A él correrá el justo, y será levantado. \n Proverbios 18:10-17 RVR1960",
       descripcion: "",
       title: "Ministerio Torre Fuerte",
       multimedia: {

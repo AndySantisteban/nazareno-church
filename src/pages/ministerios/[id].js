@@ -22,11 +22,6 @@ export default function MinisteriosForId() {
     getMinisteries();
   }, [id]);
 
-  useEffect(() => {
-    // if (id !== 4) return;
-
-    getImagesForFacebook();
-  }, [id]);
   return (
     <div className={inter.className + " pt-5"}>
       <div className="container ">
@@ -56,13 +51,14 @@ export default function MinisteriosForId() {
               <div className="row">
                 {data?.ministres[0]?.multimedia.videos.map((i) => {
                   return (
-                    <div className="col col-lg-6 col-md-6 col-sm-12">
-                      <iframe
-                        loading="lazy"
-                        src={i.url}
-                        height="280px"
-                        width={"100%"}
-                      ></iframe>
+                    <div className="col col-lg-6 col-md-6 col-sm-12 ">
+                      <div className="ratio ratio-16x9">
+                        <iframe
+                          loading="lazy"
+                          src={i.url}
+                          allowfullscreen
+                        ></iframe>
+                      </div>
                     </div>
                   );
                 }) ?? []}

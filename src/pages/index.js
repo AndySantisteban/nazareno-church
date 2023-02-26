@@ -4,6 +4,15 @@ import Image from "next/image";
 import Banner from "@/assets/banner.png";
 import BannerOracion from "@/assets/banner-oracion.png";
 import { useEffect, useState } from "react";
+import { Carousel } from "@/components/Carousel";
+
+const listImages = [
+  {
+    src: BannerOracion,
+    title: "Cultos de Oración",
+    content: "Martes y Jueves",
+  },
+];
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {

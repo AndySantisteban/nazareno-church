@@ -26,12 +26,12 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className={inter.className + " sticky-top"}>
+    <div className={inter.className + " sticky-top "}>
       <div className="bg-light d-flex justify-content-between p-2 px-3 fw-bold">
         <small>Telefono: {info.telephone ?? ""}</small>
         <small>Ubicación: {info.address ?? ""}</small>
       </div>
-      <nav className="navbar navbar-expand-lg navbar-white bg-white py-3">
+      <nav className="navbar navbar-expand-lg navbar-white bg-white py-3 shadow-sm">
         <div className="container-fluid">
           <Link className="navbar-brand" href="/">
             <Image src={Logo} alt="logo" />
