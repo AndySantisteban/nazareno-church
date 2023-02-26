@@ -37,7 +37,7 @@ export default function MinisteriosForId() {
           <img
             src={data?.ministres[0]?.img}
             alt={data?.ministres[0]?.img}
-            className="img-fluid"
+            className="img-fluid w-50"
           />
         </div>
         {data?.ministres[0]?.content && (
