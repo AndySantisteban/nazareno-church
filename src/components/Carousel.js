@@ -1,10 +1,10 @@
 import Image from "next/image";
-
+import BgImage from "@/assets/bg_header.png";
 export const Carousel = ({ listImages }) => {
   return (
     <div
       id="carouselExampleCaptions"
-      className="carousel slide"
+      className="carousel slide position-relative"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators">
@@ -34,7 +34,7 @@ export const Carousel = ({ listImages }) => {
           return (
             <div
               className={`carousel-item ${index === 0 ? " active" : ""}`}
-              style={{ maxHeight: "650px" }}
+              style={{ maxHeight: "750px" }}
               key={index}
             >
               <Image
@@ -43,8 +43,8 @@ export const Carousel = ({ listImages }) => {
                 alt="..."
               />
               <div className="carousel-caption d-none d-md-block">
-                <h5>{i.title}</h5>
-                <p>{i.content}</p>
+                <h5 className="display-4  fw-bold">{i.title}</h5>
+                <p className="display-6 fw-bold">{i.content}</p>
               </div>
             </div>
           );
@@ -68,6 +68,7 @@ export const Carousel = ({ listImages }) => {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Siguiente</span>
       </button>
+      <Image className="w-100 position-absolute bottom-0" src={BgImage} />
     </div>
   );
 };

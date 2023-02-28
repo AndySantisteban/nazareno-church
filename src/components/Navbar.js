@@ -27,11 +27,11 @@ export const Navbar = () => {
 
   return (
     <div className={inter.className + " sticky-top "}>
-      <div className="bg-light d-flex justify-content-between p-2 px-3 fw-bold">
+      <div className="bg-light d-flex justify-content-between p-2 px-3 fw-bold ">
         <small>Telefono: {info.telephone ?? ""}</small>
         <small>Ubicación: {info.address ?? ""}</small>
       </div>
-      <nav className="navbar navbar-expand-lg navbar-white bg-white shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-white bg-white shadow-sm ">
         <div className="container-fluid">
           <Link className="navbar-brand w-50" href="/">
             <Image src={Logo} alt="logo" className="img-fluid " />

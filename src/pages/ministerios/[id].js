@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Fade from "react-reveal/Fade";
 import Modal from "react-responsive-modal";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,23 +53,25 @@ export default function MinisteriosForId() {
           <div>
             <p className="display-6 fw-bold lh-1 mb-3 ">Videos</p>
             {data?.ministres[0]?.multimedia.videos.length > 0 ? (
-              <div className="row">
-                {data?.ministres[0]?.multimedia.videos.map((i, index) => {
-                  return (
-                    <div
-                      className="col-lg-4 col-md-6 col-sm-12  mb-4"
-                      key={index}
-                    >
-                      <div className="ratio ratio-16x9">
-                        <iframe
-                          loading="lazy"
-                          src={i.url}
-                          allowFullScreen
-                        ></iframe>
+              <div>
+                <div className="row">
+                  {data?.ministres[0]?.multimedia.videos.map((i, index) => {
+                    return (
+                      <div
+                        className="col-lg-4 col-md-6 col-sm-12  mb-4"
+                        key={index}
+                      >
+                        <div className="ratio ratio-16x9">
+                          <iframe
+                            loading="lazy"
+                            src={i.url}
+                            allowFullScreen
+                          ></iframe>
+                        </div>
                       </div>
-                    </div>
-                  );
-                }) ?? []}
+                    );
+                  }) ?? []}
+                </div>
               </div>
             ) : (
               ""
