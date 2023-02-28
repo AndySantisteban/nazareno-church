@@ -91,13 +91,13 @@ export default function MinisteriosForId() {
                               <div
                                 className={
                                   idx === 0
-                                    ? "col-lg-3 col-md-12 mb-4 mb-lg-0"
+                                    ? "col-lg-3 col-md-12 mb-4 mb-lg-0 "
                                     : "col-lg-3 mb-4 mb-lg-0"
                                 }
                                 key={idx}
                               >
                                 <img
-                                  className="w-100 shadow-1-strong rounded mb-4"
+                                  className="w-100 shadow-1-strong rounded mb-4 img-item"
                                   src={i.url}
                                   loading={"lazy"}
                                   onClick={() => {
