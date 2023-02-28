@@ -31,10 +31,10 @@ export const Navbar = () => {
         <small>Telefono: {info.telephone ?? ""}</small>
         <small>Ubicación: {info.address ?? ""}</small>
       </div>
-      <nav className="navbar navbar-expand-lg navbar-white bg-white py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-white bg-white shadow-sm">
         <div className="container-fluid">
-          <Link className="navbar-brand" href="/">
-            <Image src={Logo} alt="logo" />
+          <Link className="navbar-brand w-50" href="/">
+            <Image src={Logo} alt="logo" className="img-fluid " />
           </Link>
           <button
             className="navbar-toggler"

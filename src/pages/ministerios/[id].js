@@ -2,9 +2,9 @@ import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
+
 export default function MinisteriosForId() {
   const [data, setData] = useState();
-
   const router = useRouter();
   const { id } = router.query;
   async function getMinisteries() {
@@ -13,11 +13,6 @@ export default function MinisteriosForId() {
     setData(min);
   }
 
-  async function getImagesForFacebook() {
-    // const images = await fetch(`https://www.facebook.com/jniferre/photos`);
-    // const imagesList = await images.json();
-    // console.log(imagesList);
-  }
   useEffect(() => {
     getMinisteries();
   }, [id]);
@@ -28,6 +23,9 @@ export default function MinisteriosForId() {
         <h2 className="display-4 fw-bold lh-1 mb-3 text-center">
           {data?.ministres[0]?.title}
         </h2>
+        <section className="mb-3  text-primary text-center">
+          {data?.ministres[0]?.content ?? ""}
+        </section>
         <div className="w-100 text-center mb-4">
           <img
             src={data?.ministres[0]?.img}
@@ -35,10 +33,7 @@ export default function MinisteriosForId() {
             className="img-fluid w-50"
           />
         </div>
-        {data?.ministres[0]?.content && (
-          <p className="display-6 fw-bold lh-1 mb-3 ">Nuestro Lema</p>
-        )}
-        <section className="mb-3 ">{data?.ministres[0]?.content ?? ""}</section>
+
         {data?.ministres[0]?.descripcion && (
           <p className="display-6 fw-bold lh-1 mb-3 ">¿Quiénes somos?</p>
         )}
@@ -46,17 +41,20 @@ export default function MinisteriosForId() {
 
         {data?.ministres[0]?.multimedia.videos.length > 0 && (
           <div>
-            <p className="display-6 fw-bold lh-1 mb-3 ">Nuestros covers</p>
+            <p className="display-6 fw-bold lh-1 mb-3 ">Videos</p>
             {data?.ministres[0]?.multimedia.videos.length > 0 ? (
               <div className="row">
-                {data?.ministres[0]?.multimedia.videos.map((i) => {
+                {data?.ministres[0]?.multimedia.videos.map((i, index) => {
                   return (
-                    <div className="col col-lg-6 col-md-6 col-sm-12 ">
+                    <div
+                      className="col-lg-4 col-md-6 col-sm-12  mb-4"
+                      key={index}
+                    >
                       <div className="ratio ratio-16x9">
                         <iframe
                           loading="lazy"
                           src={i.url}
-                          allowfullscreen
+                          allowFullScreen
                         ></iframe>
                       </div>
                     </div>
@@ -64,7 +62,46 @@ export default function MinisteriosForId() {
                 }) ?? []}
               </div>
             ) : (
-              "Hola"
+              ""
+            )}
+          </div>
+        )}
+        {data?.ministres[0]?.multimedia?.images?.length > 0 && (
+          <div>
+            <p className="display-6 fw-bold lh-1 my-3 ">Galería</p>
+            {data?.ministres[0]?.multimedia?.images?.length > 0 ? (
+              <div>
+                {data?.ministres[0]?.multimedia?.images.map((i, index) => {
+                  return (
+                    <div key={index}>
+                      <p className="display-7 fw-bold">{i.title}</p>
+                      <div className="row ">
+                        {i.photos &&
+                          i.photos.map((i, idx) => {
+                            return (
+                              <div
+                                className={
+                                  idx === 0
+                                    ? "col-lg-3 col-md-12 mb-4 mb-lg-0"
+                                    : "col-lg-3 mb-4 mb-lg-0"
+                                }
+                                key={idx}
+                              >
+                                <img
+                                  className="w-100 shadow-1-strong rounded mb-4"
+                                  src={i.url}
+                                  loading={"lazy"}
+                                ></img>
+                              </div>
+                            );
+                          })}
+                      </div>
+                    </div>
+                  );
+                }) ?? []}
+              </div>
+            ) : (
+              ""
             )}
           </div>
         )}
