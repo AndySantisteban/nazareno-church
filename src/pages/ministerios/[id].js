@@ -1,12 +1,18 @@
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Modal from "react-responsive-modal";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function MinisteriosForId() {
   const [data, setData] = useState();
   const router = useRouter();
   const { id } = router.query;
+  const [open, setOpen] = useState(false);
+  const [imgSelected, setImgSelected] = useState("");
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
   async function getMinisteries() {
     const ministerio = await fetch(`/api/ministerios?id=${id}`);
     const min = await ministerio.json();
@@ -19,6 +25,9 @@ export default function MinisteriosForId() {
 
   return (
     <div className={inter.className + " pt-5"}>
+      <Modal open={open} onClose={onCloseModal} center>
+        <img src={imgSelected} alt="..." className="img-fluid" />
+      </Modal>
       <div className="container ">
         <h2 className="display-4 fw-bold lh-1 mb-3 text-center">
           {data?.ministres[0]?.title}
@@ -91,6 +100,10 @@ export default function MinisteriosForId() {
                                   className="w-100 shadow-1-strong rounded mb-4"
                                   src={i.url}
                                   loading={"lazy"}
+                                  onClick={() => {
+                                    onOpenModal();
+                                    setImgSelected(i.url);
+                                  }}
                                 ></img>
                               </div>
                             );
