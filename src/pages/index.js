@@ -2,7 +2,10 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 
 import Banner from "@/assets/banner.png";
+import Conciert from "@/assets/conciert.jpg";
+import Study from "@/assets/study-biblic.jpg";
 import BannerOracion from "@/assets/banner-oracion.png";
+import Cruz from "@/assets/cruz.jpg";
 import { useEffect, useState } from "react";
 import { Carousel } from "@/components/Carousel";
 
@@ -21,7 +24,6 @@ export default function Home() {
   async function getInfo() {
     const info = await fetch("/api/info");
     const infoData = await info.json();
-    console.log(infoData);
     if (infoData) {
       setInfo(infoData);
     }
@@ -32,18 +34,39 @@ export default function Home() {
 
   return (
     <div className={inter.className}>
-      <Image
-        src={Banner}
-        alt="iglesia del nazareno"
-        className="img-fluid w-100"
+      <Carousel
+        listImages={[
+          {
+            src: Banner,
+            content: "",
+            title: "",
+          },
+          {
+            src: Conciert,
+            content: "",
+            title: "",
+          },
+          {
+            src: Cruz,
+            content: "",
+            title: "",
+          },
+        ]}
       />
-      {/*Bienvenida*/}
+
       <div className="py-5">
         <div className="container my-5 ">
           <div className="row flex-lg-row-reverse align-items-center g-5 ">
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <h2 className="display-2 fw-bold lh-1 mb-3">
-                Bienvenidos a la Iglesia del NAZARENO
+              <h2 className="display-3 fw-bold lh-1 mb-3 text-secondary">
+                <span className="display-5 fw-bold text-dark lh-1 mb-3">
+                  Bienvenidos a la
+                </span>{" "}
+                Iglesia del NAZARENO
+                <span className="display-5 fw-bold  text-dark lh-1 mb-3">
+                  {" "}
+                  de Ferreñafe
+                </span>
               </h2>
               <p className="lead">{info.motto}</p>
             </div>

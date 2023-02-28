@@ -199,6 +199,15 @@ export default function Ministerios(req, res) {
     });
     return res.status(200).json({ ministres });
   }
+  ministres = ministres.map((i) => {
+    return {
+      id: i.id,
+      img: i.img,
+      content: i.content,
+      descripcion: i.descripcion,
+      title: i.title,
+    };
+  });
 
   return res.status(200).json({ ministres });
 }
