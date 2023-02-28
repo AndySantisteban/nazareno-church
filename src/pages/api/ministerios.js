@@ -140,6 +140,10 @@ export default function Ministerios(req, res) {
             url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Figlesia.delnazareno.79025%2Fvideos%2F5923042204415504%2F&show_text=false&width=560&t=0",
             descripcion: "Llamado",
           },
+          {
+            url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Figlesia.delnazareno.79025%2Fvideos%2F219700877102149%2F&show_text=false&width=560&t=0",
+            descripcion: "",
+          },
         ],
         images: [
           {
