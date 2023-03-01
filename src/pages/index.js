@@ -31,18 +31,20 @@ export default function Home() {
         listImages={[
           {
             src: Banner,
-            content: "",
-            title: "",
+            content: "Marcos, 11:24",
+            title:
+              "Crean que ya han recibido todo lo que estén pidiendo en oración, y lo obtendrán.",
           },
           {
             src: Conciert,
-            content: "",
-            title: "",
+            content: "Juan, 3-18",
+            title: "No amemos de palabra y de boca, sino de verdad y con obras",
           },
           {
             src: Cruz,
-            content: "",
-            title: "",
+            content: "Lucas, 18-27",
+            title:
+              "Lo que es imposible para los hombres, es posible para Dios.",
           },
         ]}
       />
@@ -62,7 +64,7 @@ export default function Home() {
                     de Ferreñafe
                   </span>
                 </h2>
-                <p className="lead">{info.motto}</p>
+                <p className="text-secondary">{info.motto}</p>
               </div>
               <div className="col col-lg-6 col-md-6 col-sm-12 text-center ">
                 <Image

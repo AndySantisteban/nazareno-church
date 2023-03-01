@@ -1,3 +1,13 @@
 .img-item:hover {
   opacity: 0.9;
 }
+
+.mt--5 {
+  margin-top: -100px !important;
+}
+.opacity--25 {
+  filter: contrast(70%) brightness(50%);
+}
+.opacity--15 {
+  filter: contrast(95%);
+}
