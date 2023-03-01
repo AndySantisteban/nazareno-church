@@ -75,12 +75,13 @@ export default function Cultos({ cultos }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getInitialProps(context) {
   const data = await fetch(`${process.env.APIPATH}/api/cultos`);
   const cultos = await data.json();
   return {
     props: {
       cultos,
     },
+    fallback: tru,
   };
 }
