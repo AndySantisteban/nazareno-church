@@ -45,6 +45,9 @@ export const Carousel = ({ listImages }) => {
                 src={i.src}
                 className=" img-fluid d-block w-100 h-100 opacity--25"
                 alt="..."
+                priority
+                width={"auto"}
+                height={"auto"}
               />
               <div className="text-white d-none d-md-block position-absolute top-50 start-0 container mx-5 px-5">
                 <h5 className="display-3  mt--5 fw-bold  mx-5 px-5 mb-5">
@@ -77,6 +80,10 @@ export const Carousel = ({ listImages }) => {
       <Image
         className="w-100 position-absolute bottom-0 opacity--15"
         src={BgImage}
+        alt="...."
+        priority
+        width={"auto"}
+        height={"auto"}
       />
     </div>
   );

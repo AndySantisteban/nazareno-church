@@ -115,26 +115,26 @@ export default function Home() {
       </div>
       <div className="container-md mt-5">
         <Fade>
-          <h2 className="display-4 fw-bold lh-2 text-center">
+          <h2 className="display-4 display-sm-6 fw-bold lh-2 text-center">
             NUESTRAS REUNIONES
           </h2>
           <p className="text-center">
             Forma parte de nuestras reuniones presenciales, además conéctate a
             través de nuestras reuniones online
           </p>
-          <div className="row mt-4 justify-content-center">
-            <div className="col-4 text-center">
+          <div className="row mt-4 ">
+            <div className="col  col-md-6 col-sm-12 col-xs-12  text-center">
               <FaChurch size={70} className="text-muted" />
-              <h3>Presenciales</h3>
+              <h3 className="display-5 fw-bold  lh-2">Presenciales</h3>
               <small className="text-muted">
                 Acomódate en órden de llegada
               </small>
-              <ul className="list-group list-group-flush">
+              <ul>
                 {cultos?.cultos?.map((i, idx) => {
                   return (
                     <li
                       key={idx}
-                      className="list-group-item bg-light text-start text-muted"
+                      className="list-group-item bg-light text-center lh-2 text-muted"
                     >
                       {i.tipo} - {i.horario}
                     </li>
@@ -142,22 +142,22 @@ export default function Home() {
                 })}
               </ul>
             </div>
-            <div className="col-4 text-center">
+            <div className="col  col-md-6 col-sm-12 col-xs-12  text-center">
               <FaMousePointer size={70} className="text-muted" />
-              <h3>Online</h3>
+              <h3 className="display-5 fw-bold  lh-2">Online</h3>
               <small className="text-muted">
                 Conéctate a través de Facebook y YouTube
               </small>
-              <ul className="list-group list-group-flush">
+              <ul className="row text-center mt-4">
                 {cultos?.redes?.map((i, idx) => {
                   return (
                     <li
                       key={idx}
-                      className="list-group-item bg-light text-start text-muted"
+                      className="list-group-item bg-light text-center lh-2 text-muted col-3 "
                     >
                       <a
                         href={i.url}
-                        className="text-decoration-none d-flex align-items-center gap-3 text-muted"
+                        className="text-decoration-none text-muted border-bottom"
                         target={"_blank"}
                       >
                         {(() => {
