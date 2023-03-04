@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 
 import Banner from "@/assets/nazareno-church.png";
+import LogoPrincipal from "@/assets/nazareno-casa.png";
 import Conciert from "@/assets/conciert.jpg";
 import Fade from "react-reveal/Fade";
 import BannerOracion from "@/assets/banner-oracion.png";
@@ -67,24 +68,19 @@ export default function Home() {
             <div className="row flex-lg-row-reverse align-items-center g-5 ">
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <h2 className="display-3 fw-bold lh-1 mb-3 text-secondary">
-                  <span className="display-5 fw-bold text-dark lh-1 mb-3">
-                    Bienvenidos a la
+                  <span className="display-5 fw-bold text-muted lh-1 mb-3">
+                    Bienvenidos a la casa de nuestro Señor
                   </span>{" "}
-                  Iglesia del NAZARENO
-                  <span className="display-5 fw-bold  text-dark lh-1 mb-3">
-                    {" "}
-                    de Ferreñafe
-                  </span>
                 </h2>
                 <p className="text-secondary">{info.motto}</p>
               </div>
               <div className="col col-lg-6 col-md-6 col-sm-12 text-center ">
                 <Image
-                  src={BannerOracion}
-                  className="mx-lg-auto img-fluid rounded-start"
+                  src={LogoPrincipal}
+                  className="mx-lg-auto img-thumbnail rounded-circle"
                   alt="Bootstrap Themes"
-                  width="700"
-                  height="500"
+                  width="auto"
+                  height="auto"
                   loading="lazy"
                 />
               </div>
@@ -100,13 +96,13 @@ export default function Home() {
               <div className="col-12 col-sm-12 col-lg-6 ">
                 <div className="card-body ">
                   <h3 className="display-7 fw-bold lh-1 mb-3">MISIÓN</h3>
-                  <p>{info.mision}</p>
+                  <p className="text-muted">{info.mision}</p>
                 </div>
               </div>
               <div className="col-12 col-sm-12 col-lg-6 ">
                 <div className="card-body">
                   <h3 className="display-7 fw-bold lh-1 mb-3">VISIÓN</h3>
-                  <p>{info.vision}</p>
+                  <p className="text-muted">{info.vision}</p>
                 </div>
               </div>
             </div>
@@ -146,7 +142,7 @@ export default function Home() {
               <FaMousePointer size={70} className="text-muted" />
               <h3 className="display-5 fw-bold  lh-2">Online</h3>
               <small className="text-muted">
-                Conéctate a través de Facebook y YouTube
+                Conéctate a través de nuestras redes sociales
               </small>
               <ul className="row text-center mt-4">
                 {cultos?.redes?.map((i, idx) => {
