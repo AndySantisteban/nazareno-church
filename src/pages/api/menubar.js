@@ -17,10 +17,10 @@ export default function Menubar(req, res) {
         path: "/recursos",
         name: "Recursos",
       },
-      {
-        path: "/cultos",
-        name: "Cultos",
-      },
+      // {
+      //   path: "/cultos",
+      //   name: "Cultos",
+      // },
     ],
   });
 }

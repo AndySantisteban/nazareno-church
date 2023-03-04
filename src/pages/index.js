@@ -8,12 +8,14 @@ import BannerOracion from "@/assets/banner-oracion.png";
 import Cruz from "@/assets/cruz.jpg";
 import { useEffect, useState } from "react";
 import { Carousel } from "@/components/Carousel";
+import { FaChurch, FaMousePointer, FaTiktok } from "react-icons/fa";
+import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [info, setInfo] = useState({});
-
+  const [cultos, setCultos] = useState({});
   async function getInfo() {
     const info = await fetch("/api/info");
     const infoData = await info.json();
@@ -21,8 +23,18 @@ export default function Home() {
       setInfo(infoData);
     }
   }
+  async function getCultos() {
+    const data = await fetch(`/api/cultos`);
+    const info = await data.json();
+
+    if (info) {
+      setCultos(info);
+    }
+  }
+
   useEffect(() => {
     getInfo();
+    getCultos();
   }, []);
 
   return (
@@ -97,6 +109,77 @@ export default function Home() {
                   <p>{info.vision}</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </Fade>
+      </div>
+      <div className="container-md mt-5">
+        <Fade>
+          <h2 className="display-4 fw-bold lh-2 text-center">
+            NUESTRAS REUNIONES
+          </h2>
+          <p className="text-center">
+            Forma parte de nuestras reuniones presenciales, además conéctate a
+            través de nuestras reuniones online
+          </p>
+          <div className="row mt-4 justify-content-center">
+            <div className="col-4 text-center">
+              <FaChurch size={70} className="text-muted" />
+              <h3>Presenciales</h3>
+              <small className="text-muted">
+                Acomódate en órden de llegada
+              </small>
+              <ul className="list-group list-group-flush">
+                {cultos?.cultos?.map((i, idx) => {
+                  return (
+                    <li
+                      key={idx}
+                      className="list-group-item bg-light text-start text-muted"
+                    >
+                      {i.tipo} - {i.horario}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="col-4 text-center">
+              <FaMousePointer size={70} className="text-muted" />
+              <h3>Online</h3>
+              <small className="text-muted">
+                Conéctate a través de Facebook y YouTube
+              </small>
+              <ul className="list-group list-group-flush">
+                {cultos?.redes?.map((i, idx) => {
+                  return (
+                    <li
+                      key={idx}
+                      className="list-group-item bg-light text-start text-muted"
+                    >
+                      <a
+                        href={i.url}
+                        className="text-decoration-none d-flex align-items-center gap-3 text-muted"
+                        target={"_blank"}
+                      >
+                        {(() => {
+                          switch (i.nombre) {
+                            case "facebook":
+                              return <BsFacebook />;
+                            case "Instagram":
+                              return <BsInstagram />;
+                            case "Youtube":
+                              return <BsYoutube />;
+                            case "Tiktok":
+                              return <FaTiktok />;
+                            default:
+                              return <></>;
+                          }
+                        })()}{" "}
+                        {i.nombre}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </Fade>

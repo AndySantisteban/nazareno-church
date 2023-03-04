@@ -23,7 +23,7 @@ export default function Cultos(req, res) {
     redes: [
       {
         nombre: "facebook",
-        url: "",
+        url: "https://www.facebook.com/iglesia.delnazareno.79025",
       },
       {
         nombre: "Youtube",
@@ -35,7 +35,7 @@ export default function Cultos(req, res) {
       },
       {
         nombre: "Tiktok",
-        url: "",
+        url: "https://www.tiktok.com/@iglesiadelnazaren86",
       },
     ],
   };
