@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Fade from "react-reveal/Fade";
 import Modal from "react-responsive-modal";
 const inter = Inter({ subsets: ["latin"] });
 
