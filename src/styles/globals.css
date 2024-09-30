@@ -1,13 +1,22 @@
 .img-item:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 .mt--5 {
-  margin-top: -100px !important;
+    margin-top: -100px !important;
 }
 .opacity--25 {
-  filter: contrast(70%) brightness(40%);
+    filter: contrast(70%) brightness(40%);
 }
 .opacity--15 {
-  filter: contrast(95%);
+    filter: contrast(95%);
+}
+
+.btn-primary {
+    background-color: #2d2d2d !important;
+    border-color: #2d2d2d !important;
+}
+
+.btn {
+    border-radius: 2px !important;
 }
