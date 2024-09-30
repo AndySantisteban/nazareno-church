@@ -13,10 +13,26 @@
 }
 
 .btn-primary {
-    background-color: #2d2d2d !important;
-    border-color: #2d2d2d !important;
+    background-color: #6366f1 !important;
+    border-color: #6366f1 !important;
 }
 
+.display-1,
+.display-2,
+.display-4,
+.display-5,
+.display-6 {
+    color: #6366f1 !important;
+}
+.text-primary {
+    color: #6366f1 !important;
+}
+small.text-primary {
+    color: #6366f1 !important;
+}
+.nav-link.active {
+    color: #6366f1 !important;
+}
 .btn {
     border-radius: 2px !important;
 }

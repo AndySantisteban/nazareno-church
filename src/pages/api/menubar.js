@@ -13,14 +13,14 @@ export default function Menubar(req, res) {
                 path: '/noticias',
                 name: 'Noticias',
             },
-            {
-                path: '/recursos',
-                name: 'Recursos',
-            },
-            {
-                path: '/devocinal',
-                name: 'Devocional Diario',
-            },
+            // {
+            //     path: '/recursos',
+            //     name: 'Recursos',
+            // },
+            // {
+            //     path: '/devocinal',
+            //     name: 'Devocional Diario',
+            // },
             // {
             //   path: "/cultos",
             //   name: "Cultos",
