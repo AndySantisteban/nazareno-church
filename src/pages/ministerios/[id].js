@@ -31,7 +31,7 @@ export default function MinisteriosForId() {
                 <section className="mb-3  text-primary text-center">{data?.ministres[0]?.content ?? ''}</section>
                 <div className="w-100 text-center mb-4">
                     <CldImage
-                        src={data?.ministres[0]?.img} // Use this sample image or upload your own via the Media Explorer
+                        src={data?.ministres[0]?.img ?? '/somos-uno'} // Use this sample image or upload your own via the Media Explorer
                         className="img-fluid w-50"
                         width={1200}
                         height={300}
